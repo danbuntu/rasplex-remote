@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <!-- <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> -->
+    <script src="src/jquery-2.2.1.min.js" type="text/javascript"></script>
+    <script src="src/jquery-2.2.1.min.map" type="text/javascript"></script>
+    <script src="uikit/js/uikit.min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="uikit/css/uikit.min.css">
+<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="src/styles.css">
+
+  </head>
+  <body>
+
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+
+
+<div class="uk-grid">
+    <div class=" uk-container-center">
+
+<table class="uk-table">
+<tr>
+  <td>
+        <i onclick=pause('/player/navigation/home') class="button fa fa-home"></i>
+
+  </td>
+    <td>
+      <i onclick=pause('/player/navigation/back') class="button fa fa-reply"></i>
+
+    </td>
+      <td>
+        <i onclick=pause('/player/navigation/toggleOSD') class="button fa fa-info"></i>
+
+      </td>
+</tr>
+
+
+<tr>
+  <td>
+        <i onclick=pause('/player/playback/stop') class="button fa fa-stop"></i>
+  </td>
+  <td>
+        <i onclick=pause('/player/playback/pause') class="button fa fa-pause"></i>
+  </td>
+    <td>
+        <i onclick=pause('/player/navigation/play') class="button fa fa-play"></i>
+    </td>
+</tr>
+
+  <tr>
+<td>
+
+</td>
+    <td>
+      <i onclick=pause('/player/navigation/moveUp') class="button fa fa-arrow-up"></i>
+    </td>
+<td>
+
+</td>
+  </tr>
+<tr>
+
+<td>
+  <i onclick=pause('/player/navigation/moveLeft') class="button fa fa-arrow-left"></i>
+</td>
+  <td>
+<i onclick=pause('/player/navigation/select') class="button fa fa-circle"></i>
+  </td>
+<td>
+<i onclick=pause('/player/navigation/moveRight') class="button fa fa-arrow-right"></i>
+</td>
+
+</tr>
+
+<tr>
+  <td>
+
+  </td>
+<td>
+<i onclick=pause('/player/navigation/moveDown') class="button fa fa-arrow-down"></i>
+</td>
+<td>
+
+</td>
+</tr>
+
+</table>
+
+<table>
+  <tr>
+    <td>
+      <i onclick=pause('/player/playback/skipPrevious') class="button fa fa-fast-backward"></i>
+    </td>
+      <td>
+      <i onclick=pause('/player/playback/stepBack') class="button fa fa-step-backward"></i>
+
+      </td>
+        <td>
+          <i onclick=pause('/player/playback/stepForward') class="button fa fa-step-forward"></i>
+        </td>
+          <td>
+            <i onclick=pause('/player/playback/skipNext') class="button fa fa-fast-forward"></i>
+          </td>
+  </tr>
+</table>
+
+</div>
+
+</div>
+<!-- <i onclick=pause('/player/playback/setParameters?volume=100') class="button fa fa-arrow-down"></i> -->
+
+<!-- <i onclick=pause('/player/playback/setParameters?volume=80') class="button fa fa-arrow-down"></i> -->
+	<!-- <i onclick=pause('/library/sections') class="button fa fa-arrow-down"></i> -->
+
+</div>
+
+
+    <div class = "killem">
+    </div>
+
+  </body>
+  <script>
+
+    var items = ["/player/navigation/home", "/player/navigation/music", "/player/navigation/moveUp", "/player/navigation/moveDown", "/player/navigation/moveLeft", "/player/navigation/moveRight", "/player/navigation/select", "/player/navigation/back", "/player/playback/play", "/player/playback/pause", "/player/playback/stop", "/player/playback/skipNext", "/player/playback/skipPrevious", "/player/playback/stepForward", "/player/playback/stepBack"];
+
+   function pause(data){ $.get("http://192.168.2.104:3005" + data )}
+
+  </script>
+
+</html>
