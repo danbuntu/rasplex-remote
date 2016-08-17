@@ -64,7 +64,7 @@
   <i onclick=pause('/player/navigation/moveLeft') class="button fa fa-arrow-left"></i>
 </td>
   <td>
-<i onclick=pause('/player/navigation/select') class="button fa fa-circle"></i>
+<i onclick=pause('/player/navigation/select') class="button fa fa-circle" accesskey="32"></i>
   </td>
 <td>
 <i onclick=pause('/player/navigation/moveRight') class="button fa fa-arrow-right"></i>
@@ -124,6 +124,20 @@
     var items = ["/player/navigation/home", "/player/navigation/music", "/player/navigation/moveUp", "/player/navigation/moveDown", "/player/navigation/moveLeft", "/player/navigation/moveRight", "/player/navigation/select", "/player/navigation/back", "/player/playback/play", "/player/playback/pause", "/player/playback/stop", "/player/playback/skipNext", "/player/playback/skipPrevious", "/player/playback/stepForward", "/player/playback/stepBack"];
 
    function pause(data){ $.get("http://192.168.2.104:3005" + data )}
+
+
+$(document).keyup(function(evt) {
+    if (evt.keyCode == 32) {
+      space = false;
+    }
+  }).keydown(function(evt) {
+    if (evt.keyCode == 32) {
+      space = true;
+      console.log('space')
+    $.get("http://192.168.2.104:3005/player/playback/pause")
+
+    }
+  });
 
   </script>
 
